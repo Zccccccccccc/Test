@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>4b7fd7c0-6fa1-45cb-a77a-af2408ff519c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>WebAmplifier</Name>
+    <RootNamespace>WebAmplifier</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="runserver.py" />
+    <Compile Include="WebAmplifier\api\crc.py" />
+    <Compile Include="WebAmplifier\api\pyping.py" />
+    <Compile Include="WebAmplifier\api\__init__.py" />
+    <Compile Include="WebAmplifier\conf\initsystem.py" />
+    <Compile Include="WebAmplifier\conf\modeControl.py" />
+    <Compile Include="WebAmplifier\conf\setting.py" />
+    <Compile Include="WebAmplifier\conf\__init__.py" />
+    <Compile Include="WebAmplifier\data\amplifierPanel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebAmplifier\data\dataTool.py" />
+    <Compile Include="WebAmplifier\data\drainPanel.py" />
+    <Compile Include="WebAmplifier\data\fanPanel.py" />
+    <Compile Include="WebAmplifier\data\gatePanel.py" />
+    <Compile Include="WebAmplifier\data\mainControlPanel.py" />
+    <Compile Include="WebAmplifier\data\panel.py" />
+    <Compile Include="WebAmplifier\data\receiveData.py" />
+    <Compile Include="WebAmplifier\data\sendData.py" />
+    <Compile Include="WebAmplifier\data\sendToFront.py" />
+    <Compile Include="WebAmplifier\data\staticData.py" />
+    <Compile Include="WebAmplifier\data\tempPanel.py" />
+    <Compile Include="WebAmplifier\data\warningPanel.py" />
+    <Compile Include="WebAmplifier\data\__init__.py" />
+    <Compile Include="WebAmplifier\db\database.py" />
+    <Compile Include="WebAmplifier\db\systemfunc.py" />
+    <Compile Include="WebAmplifier\db\__init__.py" />
+    <Compile Include="WebAmplifier\syslog\systemlog.py" />
+    <Compile Include="WebAmplifier\syslog\__init__.py" />
+    <Compile Include="WebAmplifier\tcphandler\checkPanelThread.py" />
+    <Compile Include="WebAmplifier\tcphandler\multiThreadTcpHandler.py" />
+    <Compile Include="WebAmplifier\tcphandler\readSerialPortThread.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebAmplifier\tcphandler\sendSerialPortThread.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebAmplifier\tcphandler\sendThread.py" />
+    <Compile Include="WebAmplifier\tcphandler\sockethandler.py" />
+    <Compile Include="WebAmplifier\tcphandler\targetThread.py" />
+    <Compile Include="WebAmplifier\tcphandler\threadfunc.py" />
+    <Compile Include="WebAmplifier\tcphandler\__init__.py" />
+    <Compile Include="WebAmplifier\Test\client.py" />
+    <Compile Include="WebAmplifier\Test\control.py" />
+    <Compile Include="WebAmplifier\Test\currentInf.py" />
+    <Compile Include="WebAmplifier\Test\fan.py" />
+    <Compile Include="WebAmplifier\Test\gate.py" />
+    <Compile Include="WebAmplifier\Test\server.py" />
+    <Compile Include="WebAmplifier\Test\temp.py" />
+    <Compile Include="WebAmplifier\Test\warning.py" />
+    <Compile Include="WebAmplifier\Test\__init__.py" />
+    <Compile Include="WebAmplifier\views.py" />
+    <Compile Include="WebAmplifier\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="WebAmplifier\static\content\bootstrap.min.css" />
+    <Content Include="WebAmplifier\static\content\carousel.css" />
+    <Content Include="WebAmplifier\static\content\icons.css" />
+    <Content Include="WebAmplifier\static\content\style-carousel.css" />
+    <Content Include="WebAmplifier\static\content\style.css" />
+    <Content Include="WebAmplifier\static\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="WebAmplifier\static\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="WebAmplifier\static\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="WebAmplifier\static\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="WebAmplifier\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="WebAmplifier\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="WebAmplifier\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="WebAmplifier\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="WebAmplifier\static\fonts\icons\icon.svg" />
+    <Content Include="WebAmplifier\static\fonts\icons\icon.ttf" />
+    <Content Include="WebAmplifier\static\fonts\icons\icon.woff" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Light-webfont.eot" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Light-webfont.svg" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Light-webfont.ttf" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Light-webfont.woff" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Regular-webfont.eot" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Regular-webfont.svg" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Regular-webfont.ttf" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Regular-webfont.woff" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Semibold-webfont.eot" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Semibold-webfont.svg" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Semibold-webfont.ttf" />
+    <Content Include="WebAmplifier\static\fonts\opan-sans\OpenSans-Semibold-webfont.woff" />
+    <Content Include="WebAmplifier\static\images\FanStop.png" />
+    <Content Include="WebAmplifier\static\images\Fast.gif" />
+    <Content Include="WebAmplifier\static\images\image1.jpg" />
+    <Content Include="WebAmplifier\static\images\image10.jpg" />
+    <Content Include="WebAmplifier\static\images\image11.jpg" />
+    <Content Include="WebAmplifier\static\images\image12.jpg" />
+    <Content Include="WebAmplifier\static\images\image13.jpg" />
+    <Content Include="WebAmplifier\static\images\image14.jpg" />
+    <Content Include="WebAmplifier\static\images\image15.jpg" />
+    <Content Include="WebAmplifier\static\images\image16.jpg" />
+    <Content Include="WebAmplifier\static\images\image17.jpg" />
+    <Content Include="WebAmplifier\static\images\image18.jpg" />
+    <Content Include="WebAmplifier\static\images\image19.jpg" />
+    <Content Include="WebAmplifier\static\images\image2.jpg" />
+    <Content Include="WebAmplifier\static\images\image3.jpg" />
+    <Content Include="WebAmplifier\static\images\image4.jpg" />
+    <Content Include="WebAmplifier\static\images\image5.jpg" />
+    <Content Include="WebAmplifier\static\images\image6.jpg" />
+    <Content Include="WebAmplifier\static\images\image7.jpg" />
+    <Content Include="WebAmplifier\static\images\image8.jpg" />
+    <Content Include="WebAmplifier\static\images\image9.jpg" />
+    <Content Include="WebAmplifier\static\images\name.jpg" />
+    <Content Include="WebAmplifier\static\images\Normal.gif" />
+    <Content Include="WebAmplifier\static\images\Slow.gif" />
+    <Content Include="WebAmplifier\static\images\th.jpg" />
+    <Content Include="WebAmplifier\static\images\VaryFast.gif" />
+    <Content Include="WebAmplifier\static\img\body\violate.jpg" />
+    <Content Include="WebAmplifier\static\img\core1.jpg" />
+    <Content Include="WebAmplifier\static\scripts\amplifier.js" />
+    <Content Include="WebAmplifier\static\scripts\bootstrap.min.js" />
+    <Content Include="WebAmplifier\static\scripts\carousel\jquery-1.7.1.min.js" />
+    <Content Include="WebAmplifier\static\scripts\carousel\jquery.carousel.min.js" />
+    <Content Include="WebAmplifier\static\scripts\carousel\jquery.mousewheel.js" />
+    <Content Include="WebAmplifier\static\scripts\charts\jquery.flot.js" />
+    <Content Include="WebAmplifier\static\scripts\charts\jquery.flot.pie.min.js" />
+    <Content Include="WebAmplifier\static\scripts\charts\jquery.flot.time.js" />
+    <Content Include="WebAmplifier\static\scripts\controlBoardStatus.js" />
+    <Content Include="WebAmplifier\static\scripts\currentElect.js" />
+    <Content Include="WebAmplifier\static\scripts\functions.js" />
+    <Content Include="WebAmplifier\static\scripts\fanAndTemperature.js" />
+    <Content Include="WebAmplifier\static\scripts\dbmConvertW.js" />
+    <Content Include="WebAmplifier\static\scripts\heatmap.js\heatmap.js" />
+    <Content Include="WebAmplifier\static\scripts\heatmap.js\heatmap.min.js" />
+    <Content Include="WebAmplifier\static\scripts\jquery.easing.1.3.js" />
+    <Content Include="WebAmplifier\static\scripts\jquery.min.js" />
+    <Content Include="WebAmplifier\static\scripts\scroll.min.js" />
+    <Content Include="WebAmplifier\static\scripts\socket.io.js" />
+    <Content Include="WebAmplifier\static\scripts\sparkline.min.js" />
+    <Content Include="WebAmplifier\static\scripts\vue.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\404.html" />
+    <Content Include="WebAmplifier\static\superAdmin\alerts.html" />
+    <Content Include="WebAmplifier\static\superAdmin\buttons.html" />
+    <Content Include="WebAmplifier\static\superAdmin\calendar.html" />
+    <Content Include="WebAmplifier\static\superAdmin\charts.html" />
+    <Content Include="WebAmplifier\static\superAdmin\components.html" />
+    <Content Include="WebAmplifier\static\superAdmin\content-widgets.html" />
+    <Content Include="WebAmplifier\static\superAdmin\css\animate.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\animate.min.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\bootstrap.min.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\calendar.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\file-manager.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\font-awesome.min.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\form.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\generics.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\icons.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\lightbox.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\media-player.css" />
+    <Content Include="WebAmplifier\static\superAdmin\css\style.css" />
+    <Content Include="WebAmplifier\static\superAdmin\file-manager.html" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\icons\icon.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\icons\icon.ttf" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\icons\icon.woff" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Light-webfont.eot" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Light-webfont.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Light-webfont.ttf" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Light-webfont.woff" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Regular-webfont.eot" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Regular-webfont.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Regular-webfont.ttf" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Regular-webfont.woff" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Semibold-webfont.eot" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Semibold-webfont.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Semibold-webfont.ttf" />
+    <Content Include="WebAmplifier\static\superAdmin\fonts\opan-sans\OpenSans-Semibold-webfont.woff" />
+    <Content Include="WebAmplifier\static\superAdmin\form-components.html" />
+    <Content Include="WebAmplifier\static\superAdmin\form-elements.html" />
+    <Content Include="WebAmplifier\static\superAdmin\form-examples.html" />
+    <Content Include="WebAmplifier\static\superAdmin\form-validation.html" />
+    <Content Include="WebAmplifier\static\superAdmin\images-icons.html" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\blue.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\chrome.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\city.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\cloth.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\greenish.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\kiwi.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\lights.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\night.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\ocean.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\sunny.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\sunset.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\tectile.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\violate.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\body\yellow.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\browsers\chrome.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\browsers\firefox.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\browsers\ie.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\browsers\opera.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\browsers\safari.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\carousel\c-1.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\carousel\c-2.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\carousel\c-3.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\color-picker\alpha.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\color-picker\hue.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\color-picker\saturation.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\cover-bg.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\align%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\align.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\bold%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\bold.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\code%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\code.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\font%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\font.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\full-screen%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\full-screen.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\heading%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\heading.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\help%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\help.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\italic%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\italic.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\line-height%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\line-height.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\link%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\link.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\orderlist%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\orderlist.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\picture%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\picture.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\table%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\table.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\text%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\text.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\underline%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\underline.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\unlist%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\unlist.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\unstyle%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\unstyle.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\video%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\editor\video.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\arrows.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\css.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\doc.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\exe.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\file.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\flash.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\folder.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\html.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\js.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\mp3.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\pdf.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\perl.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\php.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\ppt.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\psd.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\py.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\rar.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\txt.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\video.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\xls.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\xml.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\icon\zip.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\progress.gif" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\quicklook-icons.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\resize-preview.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\filemanager\spinner-mini.gif" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\1.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\2.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\3.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\4.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\5.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\thumbs\1.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\thumbs\2.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\thumbs\3.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\thumbs\4.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\gallery\thumbs\5.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\add%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\add.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\archive%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\archive.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\back%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\back.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\calendar%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\calendar.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\chart%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\chart.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\day%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\day.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\delete%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\delete.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\file%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\file.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\folder%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\folder-sm%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\folder-sm.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\folder.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\form%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\form.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\forwad%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\forwad.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\home%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\home.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\icon-view%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\icon-view.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\list-view%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\list-view.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\menu%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\menu.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\message%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\message.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\month%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\month.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\move%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\move.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\pages%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\pages.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\photos%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\photos.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\plus-sm%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\plus-sm.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\refresh%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\refresh.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\search%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\search-sm.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\search.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\sorting%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\sorting.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\spam%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\spam.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\table%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\table.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\tile-actions%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\tile-actions.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\typography%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\typography.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\ui%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\ui.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\updates%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\updates.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\upload%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\upload.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\week%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\week.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\widgets%402x.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\icon\widgets.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\images-doc\circle.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\images-doc\rounded.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\images-doc\shadowed.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\images-doc\thumbnail.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\loadinfo.gif" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\background.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\bigplay.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\bigplay.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\controls.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\controls.svg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\loading.gif" />
+    <Content Include="WebAmplifier\static\superAdmin\img\media-player\media-player-poster.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pic.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pics\1.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pics\2.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pics\3.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pics\4.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pics\5.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\profile-pics\6.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\projects\1.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\projects\2.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\projects\3.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\select-bg.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\shortcuts\calendar.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\shortcuts\connections.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\shortcuts\money.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\shortcuts\reports.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\shortcuts\stats.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\shortcuts\twitter.png" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-blue.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-chrome.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-city.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-cloth.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-greenish.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-kiwi.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-lights.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-night.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-ocean.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-sunny.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-sunset.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-tectile.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-violate.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\skin-yellow.jpg" />
+    <Content Include="WebAmplifier\static\superAdmin\img\sort.png" />
+    <Content Include="WebAmplifier\static\superAdmin\index.html" />
+    <Content Include="WebAmplifier\static\superAdmin\js\autosize.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\bootstrap.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\calendar.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts\jquery.flot.animator.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts\jquery.flot.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts\jquery.flot.orderBar.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts\jquery.flot.pie.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts\jquery.flot.resize.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\charts\jquery.flot.time.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\chosen.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\colorpicker.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\datetimepicker.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\easypiechart.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\editor.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\editor2.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\feeds.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\file-manager\elfinder.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\fileupload.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\functions.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\icheck.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\input-mask.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\jquery-ui.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\jquery.cookie.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\jquery.easing.1.3.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\jquery.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\maps\jvectormap.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\maps\usa.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\maps\world.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\markdown.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\media-player.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\media\flashmediaelement.swf" />
+    <Content Include="WebAmplifier\static\superAdmin\js\pirobox.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\scroll.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\select.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\slider.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\sparkline.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\spinner.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\toggler.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\validation\validate.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\validation\validationEngine.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\js\weather.min.js" />
+    <Content Include="WebAmplifier\static\superAdmin\labels.html" />
+    <Content Include="WebAmplifier\static\superAdmin\list-view.html" />
+    <Content Include="WebAmplifier\static\superAdmin\login.html" />
+    <Content Include="WebAmplifier\static\superAdmin\media.html" />
+    <Content Include="WebAmplifier\static\superAdmin\media\flashmediaelement.swf" />
+    <Content Include="WebAmplifier\static\superAdmin\messages.html" />
+    <Content Include="WebAmplifier\static\superAdmin\other-components.html" />
+    <Content Include="WebAmplifier\static\superAdmin\profile-page.html" />
+    <Content Include="WebAmplifier\static\superAdmin\sa.html" />
+    <Content Include="WebAmplifier\static\superAdmin\tables.html" />
+    <Content Include="WebAmplifier\static\superAdmin\typography.html" />
+    <Content Include="WebAmplifier\templates\controlBoardStatus.html" />
+    <Content Include="WebAmplifier\templates\currentElect.html" />
+    <Content Include="WebAmplifier\templates\fanAndTemperature.html" />
+    <Content Include="WebAmplifier\templates\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebAmplifier\" />
+    <Folder Include="WebAmplifier\api\" />
+    <Folder Include="WebAmplifier\conf\" />
+    <Folder Include="WebAmplifier\data\" />
+    <Folder Include="WebAmplifier\db\" />
+    <Folder Include="WebAmplifier\static\" />
+    <Folder Include="WebAmplifier\static\content\" />
+    <Folder Include="WebAmplifier\static\fonts\" />
+    <Folder Include="WebAmplifier\static\fonts\fontawesome\" />
+    <Folder Include="WebAmplifier\static\fonts\icons\" />
+    <Folder Include="WebAmplifier\static\fonts\opan-sans\" />
+    <Folder Include="WebAmplifier\static\images\" />
+    <Folder Include="WebAmplifier\static\img\" />
+    <Folder Include="WebAmplifier\static\img\body\" />
+    <Folder Include="WebAmplifier\static\scripts\" />
+    <Folder Include="WebAmplifier\static\scripts\carousel\" />
+    <Folder Include="WebAmplifier\static\scripts\charts\" />
+    <Folder Include="WebAmplifier\static\scripts\heatmap.js\" />
+    <Folder Include="WebAmplifier\static\superAdmin\" />
+    <Folder Include="WebAmplifier\static\superAdmin\css\" />
+    <Folder Include="WebAmplifier\static\superAdmin\fonts\" />
+    <Folder Include="WebAmplifier\static\superAdmin\fonts\fontawesome\" />
+    <Folder Include="WebAmplifier\static\superAdmin\fonts\icons\" />
+    <Folder Include="WebAmplifier\static\superAdmin\fonts\opan-sans\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\body\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\browsers\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\carousel\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\color-picker\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\editor\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\filemanager\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\filemanager\icon\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\gallery\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\gallery\thumbs\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\icon\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\images-doc\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\media-player\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\profile-pics\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\projects\" />
+    <Folder Include="WebAmplifier\static\superAdmin\img\shortcuts\" />
+    <Folder Include="WebAmplifier\static\superAdmin\js\" />
+    <Folder Include="WebAmplifier\static\superAdmin\js\charts\" />
+    <Folder Include="WebAmplifier\static\superAdmin\js\file-manager\" />
+    <Folder Include="WebAmplifier\static\superAdmin\js\maps\" />
+    <Folder Include="WebAmplifier\static\superAdmin\js\media\" />
+    <Folder Include="WebAmplifier\static\superAdmin\js\validation\" />
+    <Folder Include="WebAmplifier\static\superAdmin\media\" />
+    <Folder Include="WebAmplifier\syslog\" />
+    <Folder Include="WebAmplifier\tcphandler\" />
+    <Folder Include="WebAmplifier\templates\" />
+    <Folder Include="WebAmplifier\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

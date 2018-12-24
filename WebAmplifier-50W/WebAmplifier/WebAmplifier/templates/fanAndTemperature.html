@@ -1,0 +1,55 @@
+﻿<div class="block-area">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <h2 class="tile-title">温度热力图</h2>
+                <div class="tile-config dropdown">
+                    <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                    <ul class="dropdown-menu pull-right text-right">
+                        <li><a href="">Refresh</a></li>
+                        <li><a href="">Settings</a></li>
+                    </ul>
+                </div>
+                <div id="heatmapContainerWrapperA" class="col-md-offset-3">
+                    <div id="heatmapContainerA" style="width:660px;height:380px; text-align: center">
+                        <img id="temperaturesImg" src="../static/images/Temperatures.png"/>
+                    </div>
+                    <div id="heatmapContainerATooltip" style="position:absolute;left:0;top:0;background:rgba(0,0,0,.8);color:#fff;font-size:14px;padding:5px;line-height:18px;display:none}">
+                    </div>
+                </div>
+
+                <div class="col-md-12 tile">
+                    <div id="heatmapLegend" class="pull-right">
+                        <a style="float:left">0℃</a>
+                        <a style="float:right">100℃</a>
+                        <img id="gradientImg" src="../static/images/gradientImg.png" style="width:100%;height:50px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="whiter" />
+
+<div class="block-area">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table tile table-bordered">
+                <thead>
+                    <tr>
+                        <th>风扇编号</th>
+                        <th>状态</th>
+                        <th>风扇编号</th>
+                        <th>状态</th>
+                        <th>风扇编号</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody id="fansTable">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

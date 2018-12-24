@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html class="menu-active">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <meta name="description" content="Violate Responsive Admin Template">
+    <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+
+    <title>首页</title>
+
+    <!-- CSS -->
+    <link href="../static/superAdmin/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/superAdmin/css/animate.min.css" rel="stylesheet">
+    <link href="../static/superAdmin/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/superAdmin/css/form.css" rel="stylesheet">
+    <link href="../static/superAdmin/css/calendar.css" rel="stylesheet">
+    <link href="../static/superAdmin/css/style.css" rel="stylesheet">
+    <link href="../static/superAdmin/css/icons.css" rel="stylesheet">
+    <link href="../static/superAdmin/css/generics.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="../static/content/carousel.css" media="screen" alt="" />
+    <link rel="stylesheet" type="text/css" href="../static/content/style-carousel.css" media="screen" alt="" />
+
+
+    <!-- scripts -->
+    <script type="text/javascript" src="../static/scripts/carousel/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/carousel/jquery.carousel.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/carousel/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="../static/scripts/vue.min.js"></script>
+</head>
+<body id="skin-tectile">
+
+    <header id="header" class="media">
+        <h3 class="pull-left" id="date">Pie Chart</h3>
+        <div class="media-body">
+            <div class="media" id="top-menu">
+                <div id="time" class="pull-right">
+                    <span id="hours"></span>
+                    :
+                    <span id="min"></span>
+                    :
+                    <span id="sec"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <ol class="breadcrumb hidden-xs">Power By TVT software studio</ol>
+    <section id="main" class="p-relative" role="main">
+        <section id="content" class="container">
+            <div class="block-area">
+                <div id="carousel-example-generic" class="carousel slide">
+                    <div class="carousel-inner">
+                        {% include 'controlBoardStatus.html' %}
+                        <hr class="whiter" />
+                        {% include 'fanAndTemperature.html' %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script type="text/javascript" src="../static/scripts/socket.io.js"></script>
+
+    <!-- Javascript Libraries -->
+    <!-- jQuery -->
+    <script src="../static/superAdmin/js/jquery.min.js"></script> <!-- jQuery Library -->
+    <script src="../static/superAdmin/js/jquery.easing.1.3.js"></script> <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+    <script src="../static/superAdmin/js/bootstrap.min.js"></script>
+    <!-- Charts -->
+    <script src="../static/superAdmin/js/charts/jquery.flot.js"></script> <!-- Flot Main -->
+    <script src="../static/superAdmin/js/charts/jquery.flot.time.js"></script> <!-- Flot sub -->
+    <script src="../static/superAdmin/js/charts/jquery.flot.animator.min.js"></script> <!-- Flot sub -->
+    <script src="../static/superAdmin/js/charts/jquery.flot.resize.min.js"></script> <!-- Flot sub - for repaint when resizing the screen -->
+    <script src="../static/superAdmin/js/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
+    <script src="../static/superAdmin/js/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
+    <script src="../static/superAdmin/js/charts.js"></script> <!-- All the above chart related functions -->
+
+    <script src="../static/superAdmin/js/scroll.min.js"></script>
+
+    <script src="../static/superAdmin/js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+    <!--  Form Related -->
+    <script src="../static/superAdmin/js/validation/validate.min.js"></script> <!-- jQuery Form Validation Library -->
+    <script src="../static/superAdmin/js/validation/validationEngine.min.js"></script> <!-- jQuery Form Validation Library - requirred with above js -->
+    <script src="../static/superAdmin/js/select.min.js"></script> <!-- Custom Select -->
+    <script src="../static/superAdmin/js/chosen.min.js"></script> <!-- Custom Multi Select -->
+    <script src="../static/superAdmin/js/datetimepicker.min.js"></script> <!-- Date & Time Picker -->
+    <script src="../static/superAdmin/js/colorpicker.min.js"></script> <!-- Color Picker -->
+    <script src="../static/superAdmin/js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+    <script src="../static/superAdmin/js/autosize.min.js"></script> <!-- Textare autosize -->
+    <script src="../static/superAdmin/js/toggler.min.js"></script> <!-- Toggler -->
+    <script src="../static/superAdmin/js/input-mask.min.js"></script> <!-- Input Mask -->
+    <script src="../static/superAdmin/js/spinner.min.js"></script> <!-- Spinner -->
+    <script src="../static/superAdmin/js/slider.min.js"></script> <!-- Input Slider -->
+    <script src="../static/superAdmin/js/fileupload.min.js"></script> <!-- File Upload -->
+    <!-- Text Editor -->
+    <script src="../static/superAdmin/js/editor2.min.js"></script> <!-- WYSIWYG Editor -->
+    <script src="../static/superAdmin/js/markdown.min.js"></script> <!-- Markdown Editor -->
+    <!-- UX -->
+    <script src="../static/superAdmin/js/scroll.min.js"></script> <!-- Custom Scrollbar -->
+    <!-- Other -->
+    <script src="../static/superAdmin/js/calendar.min.js"></script> <!-- Calendar -->
+    <script src="../static/superAdmin/js/feeds.min.js"></script> <!-- News Feeds -->
+    <!-- All JS functions -->
+    <script src="../static/superAdmin/js/functions.js"></script>
+
+    <script type="text/javascript" src="../static/scripts/amplifier.js"></script>
+    <script type="text/javascript" src="../static/scripts/controlBoardStatus.js"></script>
+    <script type="text/javascript" src="../static/scripts/currentElect.js"></script>
+    <script type="text/javascript" src="../static/scripts/fanAndTemperature.js"></script>
+    <script type="text/javascript" src="../static/scripts/heatmap.js/heatmap.js"></script>
+    <script type="text/javascript" src="../static/scripts/dbmConvertW.js"></script>
+
+
+    <script>
+
+
+        onChangeFansStatusByPath([1, 1, 1, 0, 0, 1], [1, 2, 3, 0, 0, 0])
+    </script>
+
+</body>
+</html>

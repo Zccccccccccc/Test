@@ -1,0 +1,337 @@
+﻿<!-- Quick Stats -->
+<div class="block-area">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="tile">
+                    <h2 class="tile-title">开关按钮</h2>
+                    <div class="tile-config dropdown">
+                        <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                        <ul class="dropdown-menu pull-right text-right">
+                            <li><a href="">Refresh</a></li>
+                            <li><a href="">Settings</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center" style="height:160px">
+
+                        <p id="hAPathSwtichToMerge">开关</p>
+                        <div id="ControlBoardA" class="make-switch" onclick="onChangeControlBoardAByFront()">
+                            <input type="checkbox">
+                        </div>
+
+
+                        <div class="row" id="alertDiv">
+                            <h3><span class="label label-success">状态正常</span></h3>
+                        </div>
+
+                        <div class="modal fade" id="modalWarning" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button onclick="onClearAlertMsg()" style="float:right" type="button" class="btn btn-sm">Clear</button>
+                                        <h4 class="modal-title">告警信息</h4>
+                                    </div>
+                                    <div class="modal-body" id="warnigMessageList">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button onclick="onClearAlertMsg()" type="button" class="btn btn-sm" data-dismiss="modal">Close</button>
+                                        <button onclick="onClearAlertMsg()" style="float:right" type="button" class="btn btn-sm">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="tile">
+                    <h2 class="tile-title">旋钮</h2>
+                    <div class="tile-config dropdown">
+                        <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                        <ul class="dropdown-menu pull-right text-right">
+                            <li><a href="">Refresh</a></li>
+                            <li><a href="">Settings</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center" style="height:160px">
+                        <div class="col-md-10 col-md-offset-1">
+                            <a id="aAPathSwtichToMergeGain">增益(dB)</a>
+                            <div class="input-group number-spinner">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                </span>
+                                <input id="inputAPathGain" type="text" class="form-control text-center" value="0">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-10 col-md-offset-1">
+                            <a id="aAPathSwtichToMergeFrequency">频率(GHz)</a>
+                            <div class="input-group number-spinner">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                </span>
+                                <input id="inputAPathFrequency" type="text" class="form-control text-center" value="10.5">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <a id="aAPathSwtichToMergePower">功率(dBm)</a>
+                            <div class="input-group number-spinner">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                </span>
+                                <input id="inputAPathPower" type="text" class="form-control text-center" value="47">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <h2 class="tile-title">栅压状态</h2>
+                    <div class="tile-config dropdown">
+                        <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                        <ul class="dropdown-menu pull-right text-right">
+                            <li><a href="">显示单位W</a></li>
+                            <li><a href="">显示单位dB</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="text-center" style="height:80px">
+                        <div class="row" style="margin-top:20px">
+                            <div class="col-md-4">
+                                <img src="../static/images/stats.png" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <button class="btn btn-lg m-r-5" data-toggle="modal" href="#modalWider">栅压详细状态</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modalWider" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">栅压状态</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>每一路栅压状态</p>
+                                    <!-- Bordered -->
+                                    <div class="block-area">
+                                        <div class="p-10" id="divGateVoltage">
+                                            <div class="row">
+                                                <h4>栅压调节步进值</h4>
+                                                <div class="col-md-3">
+                                                    <input value="1" id="inputGateVoltageStep" type="text" class="form-control input-sm m-b-10">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button onclick="onSaveCurrentList()" class="btn btn-lg btn-alt m-r-5">保存电流</button>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                        <input type="hidden" value="" name="">
+                                                        <span class="btn btn-file btn-sm btn-alt">
+                                                            <span class="fileupload-new">选择文件</span>
+                                                            <span class="fileupload-exists">更改文件</span>
+                                                            <input type="file" id="uploadVotageFile" name="">
+                                                        </span>
+                                                        <span class="fileupload-preview"></span>
+                                                        <a href="#" class="close close-pic fileupload-exists" data-dismiss="fileupload">
+                                                            <i class="fa fa-times"></i>
+                                                        </a>
+                                                    </div>
+                                                    <button onclick="onUploadCurrentGateVotage()" class="btn btn-lg btn-alt m-r-5">上传</button>
+                                                </div>
+                                            </div>
+                                            <div class="tab-container tile media">
+                                                <ul class="tab pull-left tab-vertical nav nav-tabs">
+                                                    <li class="active"><a href="#gateVoltageAndCurrent1">末级 1~5</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent2">末级 6~10</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent3">末级 11~15</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent4">末级 16~20</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent5">末级 21~25</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent6">末级 26~30</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent7">末级 30~34</a></li>
+                                                    <li><a href="#gateVoltageAndCurrent8">驱动栅压</a></li>
+                                                </ul>
+
+                                                <div class="tab-content media-body">
+                                                    <div class="tab-pane active" id="gateVoltageAndCurrent1">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent2">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent3">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent4">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent5">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent6">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent7">
+                                                    </div>
+                                                    <div class="tab-pane" id="gateVoltageAndCurrent8">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="tile">
+            <h2 class="tile-title">电流线型图</h2>
+            <div class="tile-config dropdown">
+                <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                <ul class="dropdown-menu pull-right text-right">
+                    <li><a href="">Refresh</a></li>
+                    <li><a href="">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="p-10">
+                <h5 class="text-center">总电流:<a id="currentBoradATotal"></a></h5>
+                <div id="divACurrentBoard" class="main-chart" style="height: 250px"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="tile">
+                <h2 class="tile-title">正向功率显示</h2>
+                <div class="tile-config dropdown">
+                    <a data-toggle="dropdown" href="" class="tile-menu"></a>
+                    <ul class="dropdown-menu pull-right text-right">
+                        <li><a href="">Refresh</a></li>
+                        <li><a href="">Settings</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="text-center" style="height:220px;">
+                    <div class="p-t-10 p-r-5 p-b-5">
+                        <div id="dynamic-chartPos" style="height: 200px">正向功率</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="tile">
+                <h2 class="tile-title">输入功率显示</h2>
+                <div class="tile-config dropdown">
+                    <a data-toggle="dropdown" href="" class="tooltips tile-menu" title="Options"></a>
+                    <ul class="dropdown-menu pull-right text-right">
+                        <li onclick="convertToW()"><a>显示单位(W)</a></li>
+                        <li onclick="convertTodBm()"><a>显示单位(dBm)</a></li>
+                    </ul>
+                </div>
+                <div class="text-center" style="margin-top:20px; height:200px;">
+                    <div class="pie-chart-tiny" data-percent="0" id="ControlBoardPower1">
+                        <span class="percent"></span>
+                        <span class="pie-title">输入功率:<a style="font-weight:bold" id="aControlBoardPower1">0</a><a name="aControlBoardPowerUnit">W</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="tile">
+                <h2 class="tile-title">反向功率显示</h2>
+                <div class="tile-config dropdown">
+                    <a data-toggle="dropdown" href="" class="tile-menu"></a>
+                    <ul class="dropdown-menu pull-right text-right">
+                        <li><a href="">Refresh</a></li>
+                        <li><a href="">Settings</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="text-center" style="height:220px;">
+                    <div class="p-t-10 p-r-5 p-b-5">
+                        <div id="dynamic-chartNag" style="height: 200px">反向功率</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        /* Tag Select */
+        (function () {
+            /* Limited */
+            $(".tag-select-limited").chosen({
+                max_selected_options: 5
+            });
+
+            /* Overflow */
+            $('.overflow').niceScroll();
+        })();
+
+        /* Input Masking - you can include your own way */
+        (function () {
+            $('.mask-date').mask('00/00/0000');
+            $('.mask-time').mask('00:00:00');
+            $('.mask-date_time').mask('00/00/0000 00:00:00');
+            $('.mask-cep').mask('00000-000');
+            $('.mask-phone').mask('0000-0000');
+            $('.mask-phone_with_ddd').mask('(00) 0000-0000');
+            $('.mask-phone_us').mask('(000) 000-0000');
+            $('.mask-mixed').mask('AAA 000-S0S');
+            $('.mask-cpf').mask('000.000.000-00', { reverse: true });
+            $('.mask-money').mask('000.000.000.000.000,00', { reverse: true });
+            $('.mask-money2').mask("#.##0,00", { reverse: true, maxlength: false });
+            $('.mask-ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', { translation: { 'Z': { pattern: /[0-9]/, optional: true } } });
+            $('.mask-ip_address').mask('099.099.099.099');
+            $('.mask-percent').mask('##0,00%', { reverse: true });
+            $('.mask-credit_card').mask('0000 0000 0000 0000');
+        })();
+
+        /* Spinners */
+        (function () {
+            //Basic
+            $('.spinner-1').spinedit();
+
+            //Set Value
+            $('.spinner-2').spinedit('setValue', 100);
+
+            //Set Minimum
+            $('.spinner-3').spinedit('setMinimum', -10);
+
+            //Set Maximum
+            $('.spinner-4').spinedit('setMaxmum', 100);
+
+            //Set Step
+            $('.spinner-5').spinedit('setStep', 10);
+
+            //Set Number Of Decimals
+            $('.spinner-6').spinedit('setNumberOfDecimals', 2);
+        })();
+    });
+</script>
